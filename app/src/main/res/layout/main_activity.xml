@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/settings"
+            style="@style/main_buttons"
+            android:layout_gravity="start"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/main_text"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_name" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/account"
+            style="@style/main_buttons"
+            android:layout_gravity="end"
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_rv"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_character"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/add_character"
+        style="@style/main_buttons"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

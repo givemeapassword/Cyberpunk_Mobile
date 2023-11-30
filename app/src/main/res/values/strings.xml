@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RP_Cyberpunk_list</string>
+    <string name="main_name">CYBERPUNK</string>
+    <string name="character_name">Джонни Бой</string>
+    <string name="character_class">СОЛО</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

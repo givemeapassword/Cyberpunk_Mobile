@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_character"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/gradient_card">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/characters_name"
+            style="@style/character_card_text"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="end|center_vertical"
+            android:text="@string/character_name" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/characters_class"
+            style="@style/character_card_text"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_gravity="end|bottom"
+            android:text="@string/character_class"/>
+        </LinearLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/card_image"
+            style="@style/character_card_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
