@@ -2,7 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.RP_Cyberpunk_list" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorSurface">@color/background_list</item>
+        <item name="colorPrimary">@color/background_list</item>
+        <item name="android:windowBackground">@color/background_list</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->

@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -24,15 +23,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
-            style="@style/character_card_text"
+            android:id="@+id/class_name"
+            style="@style/character_card_text_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="82dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="60dp"
             android:text="@string/character_name"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/materialTextView"
+            app:layout_constraintBottom_toTopOf="@+id/class_character"
             app:layout_constraintEnd_toStartOf="@+id/main_image"
             app:layout_constraintHorizontal_bias="0.863"
             app:layout_constraintStart_toEndOf="@+id/back_button"
@@ -40,15 +39,14 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/materialTextView"
-            style="@style/character_card_text"
+            android:id="@+id/class_character"
+            style="@style/character_card_text_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="110dp"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="92dp"
             android:text="@string/character_class"
-            android:textColor="@color/black"
             app:layout_constraintEnd_toStartOf="@+id/main_image"
             app:layout_constraintHorizontal_bias="0.92"
             app:layout_constraintStart_toEndOf="@+id/back_button"
@@ -66,39 +64,29 @@
 
 
         <EditText
+            style="@style/edit_text_list"
             android:id="@+id/editText1"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="72dp"
-            android:autofillHints=""
-            android:background="@android:color/transparent"
             android:drawableEnd="@drawable/anateye"
-            android:inputType="number"
-            android:text="222"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/materialButton"
+    <Spinner
+        android:id="@+id/spinner"
         android:layout_width="0dp"
         android:layout_height="53dp"
-        android:hint="@string/character_class"
+        android:layout_marginHorizontal="50dp"
+        android:entries="@array/list_elements"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-        
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/regime"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"
-            android:inputType="none"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"/>
+
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
@@ -108,13 +96,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <com.google.android.material.imageview.ShapeableImageView
         style="@style/main_buttons"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@color/white"
+        android:background="@color/teal_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

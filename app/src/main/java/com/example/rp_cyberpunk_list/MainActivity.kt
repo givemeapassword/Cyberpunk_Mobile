@@ -5,11 +5,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rp_cyberpunk_list.databinding.MainActivityBinding
+import com.example.rp_cyberpunk_list.db.MySQLManager
 
 class MainActivity:AppCompatActivity(), CharacterAdapter.Listener {
 
     private lateinit var binding: MainActivityBinding
+    private val myDbSQLManager = MySQLManager(this)
     private val adapter = CharacterAdapter(this)
+    private val cards = ArrayList<Characters>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +34,11 @@ class MainActivity:AppCompatActivity(), CharacterAdapter.Listener {
             }
             mainRv.layoutManager = LinearLayoutManager(this@MainActivity)
             mainRv.adapter = adapter
+            cards.addAll(myDbSQLManager.getAllCards())
+            adapter.addCards(cards)
 
             addCharacter.setOnClickListener{
-                val characters = Characters(R.drawable.jhony,"Jonny","SOLO")
+                val characters = Characters(R.drawable.jhony.toString(),"Jonny","SOLO")
                 adapter.addCharacter(characters)
             }
 
@@ -45,8 +50,6 @@ class MainActivity:AppCompatActivity(), CharacterAdapter.Listener {
         startActivity(Intent(this@MainActivity,ListActivity::class.java)
             .setAction("Card")
             .putExtra("Image_Card",R.drawable.jhony)
-            //.putExtra("Name_Card"),)
-            //.putExtra("Class_Card"),)
     )
     }
 }

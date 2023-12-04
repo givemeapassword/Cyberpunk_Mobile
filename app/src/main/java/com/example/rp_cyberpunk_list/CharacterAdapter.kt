@@ -44,6 +44,11 @@ class CharacterAdapter(private val listener: Listener): RecyclerView.Adapter<Cha
         notifyDataSetChanged()
     }
 
+    fun addCards(cardData: ArrayList<Characters>){
+        characterList.clear()
+        characterList.addAll(cardData)
+    }
+
     interface Listener{
         fun onClick(characters: Characters)
     }

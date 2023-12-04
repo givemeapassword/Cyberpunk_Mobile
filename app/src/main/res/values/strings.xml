@@ -3,6 +3,15 @@
     <string name="main_name">CYBERPUNK</string>
     <string name="character_name">Джонни Бой</string>
     <string name="character_class">СОЛО</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="list_elements">
+        <item>Характеристики и навыки</item>
+        <item>Оружие и броня</item>
+        <item>Состояние и травмы</item>
+        <item>Киберимпланты</item>
+        <item>Снаряжение</item>
+        <item>Кибердека</item>
+        <item>Личность и жизненный путь</item>
+        <item>Пункты улучшения</item>
+        <item>Заметки</item>
+    </string-array>
 </resources>
