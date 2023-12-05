@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#201F1F">
+    android:background="#201F1F"
+    >
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -18,19 +19,23 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/settings"
+            android:src="@drawable/settings"
             style="@style/main_buttons"
             android:layout_gravity="start"
             android:layout_width="32dp"
-            android:layout_height="32dp" />
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"/>
 
         <com.google.android.material.textview.MaterialTextView
             style="@style/main_text"
-            android:layout_gravity="center"
+            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/main_name" />
 
         <com.google.android.material.imageview.ShapeableImageView
+            android:src="@drawable/account"
+            android:background="@android:color/transparent"
             android:id="@+id/account"
             style="@style/main_buttons"
             android:layout_gravity="end"
@@ -43,18 +48,20 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_rv"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="790dp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toTopOf="@+id/add_character"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/add_character"
         style="@style/main_buttons"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@color/black"
+        android:src="@drawable/add_person"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
