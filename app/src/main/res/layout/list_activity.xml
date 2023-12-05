@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,7 +19,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="15dp"
-            android:background="@color/black"
+            android:src="@drawable/back"
+            android:background="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,17 +64,23 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <EditText
+            android:id="@+id/luck"
             style="@style/edit_text_list"
-            android:id="@+id/editText1"
+            android:hint="0"
             android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
+            android:paddingStart="8dp"
+            android:textSize="24sp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="72dp"
-            android:drawableEnd="@drawable/anateye"
+            android:background="@drawable/border"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -82,6 +90,7 @@
         android:layout_height="53dp"
         android:layout_marginHorizontal="50dp"
         android:entries="@array/list_elements"
+        android:background="@drawable/spinner_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,21 +99,25 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.imageview.ShapeableImageView
         style="@style/main_buttons"
+        android:contentDescription="NULL"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@color/teal_200"
+        android:src="@drawable/d10_list_button"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

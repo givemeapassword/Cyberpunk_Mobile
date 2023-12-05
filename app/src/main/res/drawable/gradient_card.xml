@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
         <gradient
-            android:startColor="#4F09A7"
-            android:endColor="#381149"
+            android:startColor="#994F09A7"
+            android:endColor="#40381149"
             android:angle="100"
             android:type="linear"/>
 </shape>
