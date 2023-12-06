@@ -3,6 +3,11 @@
     <string name="main_name">CYBERPUNK</string>
     <string name="character_name">Джонни Бой</string>
     <string name="character_class">СОЛО</string>
+    <string name="personal_list_name"><u>Имя:</u></string>
+    <string name="example_text_jhony"><u>Джонни Бой</u></string>
+    <string name="personal_list_class"><u>Класс:</u></string>
+    <string name="example_class_solo"><u>Соло</u></string>
+
     <string-array name="list_elements">
         <item>Характеристики и навыки</item>
         <item>Оружие и броня</item>

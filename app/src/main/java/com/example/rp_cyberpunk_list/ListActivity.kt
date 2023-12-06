@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.AdapterView
 import androidx.activity.OnBackPressedDispatcher
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.rp_cyberpunk_list.list_fragments.CharacteristicsSkillsFragment
 import com.example.rp_cyberpunk_list.databinding.ListActivityBinding
 import com.example.rp_cyberpunk_list.db.MySQLManager
@@ -17,8 +19,10 @@ import com.example.rp_cyberpunk_list.list_fragments.ImprovementPointsFragment
 import com.example.rp_cyberpunk_list.list_fragments.NotesFragment
 import com.example.rp_cyberpunk_list.list_fragments.PersonalityLifeFragment
 import com.example.rp_cyberpunk_list.list_fragments.WeaponsArmorFragment
+import com.example.rp_cyberpunk_list.viewmodel.SharedViewModel
 
 class ListActivity : AppCompatActivity() {
+    private lateinit var sharedViewModel: SharedViewModel
     private lateinit var binding: ListActivityBinding
     private val myDbSQLManager = MySQLManager(this)
     private val fragmentList = listOf(
@@ -67,13 +71,14 @@ class ListActivity : AppCompatActivity() {
                 override fun onNothingSelected(p0: AdapterView<*>?) {}
 
             }
-            className.setOnClickListener{
-                className.requestFocus()
-            }
-            classCharacter.setOnClickListener{
-                classCharacter.requestFocus()
-            }
+        }
 
+        sharedViewModel = ViewModelProvider(this)[SharedViewModel::class.java]
+        sharedViewModel.textData.observe(this) { text ->
+            binding.className.text = text
+        }
+        sharedViewModel.classData.observe(this) { text ->
+            binding.classCharacter.text = text
         }
 
 

@@ -18,12 +18,6 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">20sp</item>
     </style>
-    <style name="character_card_text_list" parent="character_card_text_main">
-        <item name="android:inputType">text</item>
-        <item name="android:textIsSelectable">true</item>
-        <item name="android:focusableInTouchMode">true</item>
-        <item name="android:cursorVisible">true</item>
-    </style>
     <style name="character_card_image">
         <item name="android:layout_gravity">start</item>
         <item name="strokeWidth">8dp</item>
@@ -35,5 +29,9 @@
         <item name="android:inputType">number</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:autofillHints">5</item>
+    </style>
+    <style name="personal_list_text">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">22sp</item>
     </style>
 </resources>
