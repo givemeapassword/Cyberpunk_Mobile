@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
+import android.provider.BaseColumns
 import com.example.rp_cyberpunk_list.Characters
 
 class MySQLManager(context: Context) {
@@ -33,7 +34,8 @@ class MySQLManager(context: Context) {
                     val text = getString(cursor.getColumnIndexOrThrow(MyDBNameClass.COLUMN_NAME_CLASS))
                     val name = getString(cursor.getColumnIndexOrThrow(MyDBNameClass.COLUMN_NAME_TEXT))
                     val image = getString(cursor.getColumnIndexOrThrow(MyDBNameClass.COLUMN_NAME_IMAGE))
-                    val card = Characters(image,name,text)
+                    val id = cursor.getString(cursor.getColumnIndexOrThrow(BaseColumns._ID))
+                    val card = Characters(id,image,name,text)
                     cards.add(card)
                 } while (moveToNext())
             }
@@ -41,6 +43,12 @@ class MySQLManager(context: Context) {
         }
         closeDb()
         return cards
+    }
+
+    fun deleteFromDb(id: String){
+        openDb()
+        db.delete(MyDBNameClass.TABLE_NAME,"_id=${id}",null)
+        closeDb()
     }
 
     private fun closeDb():Unit = myDBHelper.close()
