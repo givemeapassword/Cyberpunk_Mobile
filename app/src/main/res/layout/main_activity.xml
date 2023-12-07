@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#201F1F"
-    >
+    android:background="#201F1F">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -17,31 +15,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/settings"
-            android:src="@drawable/settings"
-            style="@style/main_buttons"
-            android:layout_gravity="start"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@android:color/transparent"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="16dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/main_text"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/main_name" />
+            <ImageView
+                android:id="@+id/settings"
+                style="@style/main_buttons"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="12dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/settings"
+                app:layout_constraintStart_toStartOf="@id/toolbar_container"
+                app:layout_constraintTop_toTopOf="@id/toolbar_container" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:src="@drawable/account"
-            android:background="@android:color/transparent"
-            android:id="@+id/account"
-            style="@style/main_buttons"
-            android:layout_gravity="end"
-            android:layout_width="32dp"
-            android:layout_height="32dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="105dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/main_name"
+                android:fontFamily="@font/chakra_petch_medium"
+                android:textSize="30sp"
+                android:textColor="@color/red"
+                app:layout_constraintStart_toStartOf="@id/toolbar_container"
+                app:layout_constraintTop_toTopOf="@id/toolbar_container" />
 
+            <ImageView
+                android:id="@+id/account"
+                style="@style/main_buttons"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/account"
+                app:layout_constraintEnd_toEndOf="@id/toolbar_container"
+                app:layout_constraintTop_toTopOf="@id/toolbar_container" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.appbar.MaterialToolbar>
 
 
@@ -49,23 +67,20 @@
         android:id="@+id/main_rv"
         android:layout_width="match_parent"
         android:layout_height="790dp"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/add_character"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/add_character"
         style="@style/main_buttons"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/add_person"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="60dp"
         android:background="@android:color/transparent"
+        android:src="@drawable/add_person"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
 
 
 

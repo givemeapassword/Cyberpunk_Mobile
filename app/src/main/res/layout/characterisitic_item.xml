@@ -26,14 +26,29 @@
 
             <TextView
                 android:id="@+id/parentTitleTv"
-                android:layout_width="wrap_content"
+                style="@style/main_text"
+                android:layout_width="93dp"
                 android:layout_height="match_parent"
                 android:text="Language"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/main_text"
+                android:layout_width="45dp"
+                android:layout_height="26dp"
+                android:text="+6"
+                android:gravity="center"
+                android:paddingTop="2dp"
+                android:background="@drawable/spinner_border"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

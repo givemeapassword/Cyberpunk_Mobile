@@ -1,5 +1,5 @@
 <!-- res/drawable/spinner_border.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <corners android:radius="8dp" /> <!-- Радиус закругления углов, по желанию -->
-    <stroke android:color="#000000" android:width="10dp" /> <!-- Цвет и ширина границы -->
+    <stroke android:color="#000000" android:width="5dp" /> <!-- Цвет и ширина границы -->
 </shape>
