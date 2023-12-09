@@ -8,6 +8,7 @@ import androidx.activity.OnBackPressedDispatcher
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewpager2.widget.ViewPager2
 import com.example.rp_cyberpunk_list.list_fragments.CharacteristicsSkillsFragment
 import com.example.rp_cyberpunk_list.databinding.ListActivityBinding
 import com.example.rp_cyberpunk_list.db.MySQLManager
@@ -35,6 +36,7 @@ class ListActivity : AppCompatActivity() {
         PersonalityLifeFragment.newInstance(),
         ImprovementPointsFragment.newInstance(),
         NotesFragment.newInstance(),
+        CharacteristicsSkillsFragment.newInstance(),
     )
     private val adapter = VPAdapter(this,fragmentList)
 
@@ -62,7 +64,17 @@ class ListActivity : AppCompatActivity() {
                 dialog.show()
 
             }
-
+            viewPager2.apply {
+                offscreenPageLimit = 3
+                setCurrentItem(0, false)
+                registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                    override fun onPageSelected(position: Int) {
+                        spinner.setSelection(position)
+                        if (position == viewPager2.adapter?.itemCount?.minus(1)) {
+                            viewPager2.setCurrentItem(0, false)}
+                    }
+                })
+            }
             spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
                 override fun onItemSelected(adapterView: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     viewPager2.setCurrentItem(position,true)

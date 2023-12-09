@@ -60,13 +60,12 @@
         style="@style/main_buttons"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/add_person"
         android:background="@android:color/transparent"
+        android:src="@drawable/add_person"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.946" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
