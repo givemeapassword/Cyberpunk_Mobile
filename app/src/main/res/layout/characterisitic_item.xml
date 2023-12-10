@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="8dp"
@@ -18,14 +19,23 @@
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+
+            <ImageView
+                android:src="@drawable/resource_int"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toTopOf="@id/constraintLayout"
+                app:layout_constraintEnd_toStartOf="@id/STAT_Bonus"
+                />
+
             <TextView
                 android:id="@+id/parentTitleTv"
+                android:layout_marginTop="6dp"
                 style="@style/main_text"
                 android:layout_width="93dp"
                 android:layout_height="match_parent"
@@ -37,11 +47,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/STAT_Bonus"
                 style="@style/main_text"
                 android:layout_width="45dp"
                 android:layout_height="26dp"
                 android:text="+6"
                 android:gravity="center"
+                android:layout_marginTop="3dp"
                 android:paddingTop="2dp"
                 android:background="@drawable/spinner_border"
                 android:textColor="@color/black"
