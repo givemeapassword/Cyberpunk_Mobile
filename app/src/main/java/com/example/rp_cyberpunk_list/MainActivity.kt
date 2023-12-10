@@ -38,8 +38,6 @@ class MainActivity:AppCompatActivity(), CharacterAdapter.Listener {
             mainRv.layoutManager = LinearLayoutManager(this@MainActivity)
             mainRv.adapter = adapter
             getSwapMng().attachToRecyclerView(mainRv)
-            cards.addAll(myDbSQLManager.getAllCards())
-            adapter.addCards(cards)
 
             addCharacter.setOnClickListener{
                 val characters = Characters(BaseColumns._ID,R.drawable.jhony.toString(),"Jonny","SOLO")
@@ -48,6 +46,13 @@ class MainActivity:AppCompatActivity(), CharacterAdapter.Listener {
 
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        cards.clear()
+        cards.addAll(myDbSQLManager.getAllCards())
+        adapter.addCards(cards)
     }
     private fun getSwapMng(): ItemTouchHelper {
         return ItemTouchHelper(object:ItemTouchHelper

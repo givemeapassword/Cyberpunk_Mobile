@@ -1,16 +1,16 @@
 package com.example.rp_cyberpunk_list
 
+import android.content.ContentResolver
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.RelativeLayout
-import androidx.cardview.widget.CardView
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.rp_cyberpunk_list.databinding.CardItemBinding
 import com.example.rp_cyberpunk_list.db.MySQLManager
+import java.io.InputStream
+
 
 class CharacterAdapter(private val listener: Listener, val context: Context):
     RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
@@ -21,7 +21,12 @@ class CharacterAdapter(private val listener: Listener, val context: Context):
         private val binding = CardItemBinding.bind(itemView)
         fun bind(characters: Characters, listener: Listener){
             binding.apply {
-                cardImage.setImageResource(R.drawable.jhony)
+                if (characters.image.contains("/")){
+                    cardImage.setImageURI(characters.image.toUri())
+                }
+                else{
+                    cardImage.setImageResource(characters.image.toInt())
+                }
                 charactersName.text = characters.name
                 charactersClass.text = characters.role
 
@@ -54,6 +59,7 @@ class CharacterAdapter(private val listener: Listener, val context: Context):
     fun addCards(cardData: ArrayList<Characters>){
         characterList.clear()
         characterList.addAll(cardData)
+        notifyDataSetChanged()
     }
 
     fun removeCard(position: Int,dbManager: MySQLManager){

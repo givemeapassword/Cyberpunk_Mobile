@@ -41,7 +41,7 @@ class MySQLManager(context: Context) {
             }
             close()
         }
-        closeDb()
+        //closeDb()
         return cards
     }
 
