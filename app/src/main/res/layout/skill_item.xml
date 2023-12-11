@@ -22,7 +22,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            style="@style/main_text"
+            style="@style/notes_text"
             android:layout_gravity="end"
             android:layout_marginEnd="10dp"
             android:layout_width="40dp"
@@ -36,7 +36,7 @@
 
         <TextView
             android:id="@+id/card_skill_text"
-            style="@style/main_text"
+            style="@style/notes_text"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="25dp"
             android:layout_width="210dp"

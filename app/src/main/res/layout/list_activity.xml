@@ -26,7 +26,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/class_name"
-            style="@style/main_text"
+            style="@style/notes_text"
             android:layout_width="121dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="82dp"
@@ -42,7 +42,7 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/class_character"
-            style="@style/main_text"
+            style="@style/notes_text"
             android:layout_width="51dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="110dp"

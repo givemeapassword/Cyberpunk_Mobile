@@ -15,6 +15,13 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="notes_text">
+        <item name="fontFamily">@font/jura_regular</item>
+        <item name="android:layout_gravity"></item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 
     <style name="character_card_text_main">
         <item name="maxLines">1</item>

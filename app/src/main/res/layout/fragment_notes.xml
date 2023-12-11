@@ -1,19 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/NOTES"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_list"
     tools:context=".list_fragments.NotesFragment">
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/personal_qualities"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
-    </androidx.core.widget.NestedScrollView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="7"
-        android:textSize="100sp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
+        app:layout_constraintTop_toTopOf="@id/NOTES">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_1_head"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toTopOf="@id/personal_qualities"
+            app:layout_constraintStart_toStartOf="@id/personal_qualities">
+
+
+            <EditText
+                android:id="@+id/name_of_notes_1"
+                android:textSize="38dp"
+                android:layout_marginStart="135dp"
+                style="@style/notes_text"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@null"
+                android:inputType="text"
+                android:text="Заметки"
+
+
+                app:layout_constraintStart_toStartOf="@id/notes_1_head"
+                app:layout_constraintTop_toTopOf="@id/notes_1_head" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/text_of_notes_1"
+            style="@style/notes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="2 запасных обоймы,\n4 коробки патронов по 20 штук\n"
+            android:gravity="top"
+            app:layout_constraintTop_toBottomOf="@id/notes_1_head"
+            app:layout_constraintBottom_toBottomOf="@id/personal_qualities"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notes_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
+        app:layout_constraintTop_toBottomOf="@id/personal_qualities">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_2_head"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toTopOf="@id/notes_2"
+            app:layout_constraintStart_toStartOf="@id/notes_2">
+
+
+            <EditText
+                android:id="@+id/apperiance"
+                style="@style/notes_text"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@null"
+                android:inputType="text"
+                android:text="Заметки"
+                android:textSize="38dp"
+                android:layout_marginStart="135dp"
+                app:layout_constraintStart_toStartOf="@id/notes_2_head"
+                app:layout_constraintTop_toTopOf="@id/notes_2_head" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/text_of_notes_2"
+            style="@style/notes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="\n\n\n"
+            android:gravity="top"
+            app:layout_constraintTop_toBottomOf="@id/notes_2_head"
+            app:layout_constraintBottom_toBottomOf="@id/notes_2"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notes_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
+        app:layout_constraintTop_toBottomOf="@id/notes_2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_3_head"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toTopOf="@id/notes_3"
+            app:layout_constraintStart_toStartOf="@id/notes_3">
+
+
+            <EditText
+                android:id="@+id/name_of_notes_3"
+                style="@style/notes_text"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@null"
+                android:inputType="text"
+                android:text="Заметки"
+                android:textSize="38dp"
+                android:layout_marginStart="135dp"
+                app:layout_constraintStart_toStartOf="@id/notes_3_head"
+                app:layout_constraintTop_toTopOf="@id/notes_3_head" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/text_of_notes_3"
+            style="@style/notes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="\n\n\n"
+            android:gravity="top"
+            app:layout_constraintTop_toBottomOf="@id/notes_3_head"
+            app:layout_constraintBottom_toBottomOf="@id/notes_3"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notes_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
+        app:layout_constraintTop_toBottomOf="@id/notes_3">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_4_head"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toTopOf="@id/notes_4"
+            app:layout_constraintStart_toStartOf="@id/notes_4">
+
+
+            <EditText
+                android:id="@+id/name_of_notes_4"
+                style="@style/notes_text"
+                android:layout_width="160dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@null"
+                android:inputType="text"
+                android:text="Заметки"
+                android:textSize="38dp"
+                android:layout_marginStart="135dp"
+                app:layout_constraintStart_toStartOf="@id/notes_4_head"
+                app:layout_constraintTop_toTopOf="@id/notes_4_head" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/text_of_notes_4"
+            style="@style/notes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="\n\n\n"
+            android:gravity="top"
+            app:layout_constraintTop_toBottomOf="@id/notes_4_head"
+            app:layout_constraintBottom_toBottomOf="@id/notes_4"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
