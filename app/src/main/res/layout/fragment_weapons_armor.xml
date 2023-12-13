@@ -1,19 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_weapons_and_armor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".list_fragments.WeaponsArmorFragment">
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/body_and_head_armor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white">
-    </androidx.core.widget.NestedScrollView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="2"
         android:textSize="100sp"/>
+        android:layout_height="350dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/border"
+        app:layout_constraintTop_toTopOf="@id/fragment_weapons_and_armor"
+        tools:layout_editor_absoluteX="0dp">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/head_pic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/kaska"
+            app:layout_constraintStart_toEndOf="@+id/head_text"
+            app:layout_constraintTop_toTopOf="@id/body_and_head_armor" />
+
+
+        <ImageView
+            android:id="@+id/body_pic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/bronejilet"
+            app:layout_constraintStart_toEndOf="@+id/body_text"
+            app:layout_constraintTop_toBottomOf="@id/head_pic" />
+
+
+        <EditText
+            android:id="@+id/head_armor_value"
+            style="@style/notes_text"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:hint="0"
+            android:textSize="30dp"
+            app:layout_constraintStart_toEndOf="@id/head_pic"
+            app:layout_constraintTop_toTopOf="@id/body_and_head_armor" />
+
+        <EditText
+            android:id="@+id/body_armor_value"
+            style="@style/notes_text"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:hint="0"
+            android:textSize="30dp"
+            app:layout_constraintStart_toEndOf="@id/body_pic"
+            app:layout_constraintTop_toBottomOf="@id/head_armor_value" />
+
+
+        <TextView
+            android:id="@+id/head_text"
+            style="@style/notes_text"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:lineHeight="40dp"
+            android:text="Броня головы"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="@id/body_and_head_armor"
+            app:layout_constraintTop_toTopOf="@id/body_and_head_armor" />
+
+        <TextView
+            android:id="@+id/headding"
+            style="@style/notes_text"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Броня"
+            android:textSize="36dp"
+            app:layout_constraintStart_toStartOf="@id/body_and_head_armor"
+            app:layout_constraintTop_toTopOf="@id/body_and_head_armor" />
+
+
+        <TextView
+            android:id="@+id/body_text"
+            style="@style/notes_text"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:lineHeight="40dp"
+            android:text="Броня тела"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="@id/body_and_head_armor"
+            app:layout_constraintTop_toBottomOf="@id/head_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notes_of_body_and_head_armor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/border"
+        app:layout_constraintTop_toBottomOf="@id/body_and_head_armor">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_head"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toTopOf="@id/notes_of_body_and_head_armor"
+            app:layout_constraintStart_toStartOf="@id/notes_of_body_and_head_armor">
+
+            <EditText
+                android:id="@+id/name_of_notes"
+                style="@style/notes_text"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:background="@null"
+                android:inputType="text"
+                android:text="Заметки"
+                android:textSize="30dp"
+                android:layout_marginStart="150dp"
+                app:layout_constraintStart_toStartOf="@id/notes_head"
+                app:layout_constraintTop_toTopOf="@id/notes_head" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/text_of_notes_of_weapons_and_armor"
+            style="@style/notes_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+
+            android:text="2 запасных обоймы,\n4 коробки патронов по 20 штук"
+            android:gravity="top"
+
+            app:layout_constraintTop_toBottomOf="@id/notes_head"
+            app:layout_constraintBottom_toBottomOf="@id/notes_of_body_and_head_armor"/>
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
