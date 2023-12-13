@@ -12,10 +12,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.Gravity
 import android.view.View
 import android.widget.AdapterView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.core.net.toUri
@@ -103,6 +105,24 @@ class ListActivity : AppCompatActivity() {
             }
             mainImage.setOnClickListener {
                 changePhoto.launch(Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI))
+            }
+            dice.setOnClickListener{
+                val popupMenu = PopupMenu(this@ListActivity, dice, Gravity.START)
+                popupMenu.menuInflater.inflate(R.menu.dices, popupMenu.menu)
+                popupMenu.show()
+                popupMenu.setOnMenuItemClickListener { menuItem ->
+                    when (menuItem.itemId) {
+                        R.id.menu_item1 -> {
+                            // Действия при выборе кнопки 1
+                            true
+                        }
+                        R.id.menu_item2 -> {
+                            // Действия при выборе кнопки 2
+                            true
+                        }
+                        else -> false
+                    }
+                }
             }
         }
 

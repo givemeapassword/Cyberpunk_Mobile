@@ -109,6 +109,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/dice"
         style="@style/main_buttons"
         android:contentDescription="NULL"
         android:layout_width="50dp"
