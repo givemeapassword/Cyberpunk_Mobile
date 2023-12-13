@@ -1,21 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_skill"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:layout_marginVertical="15dp">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            app:cardCornerRadius="14dp"
+            android:layout_gravity="center_vertical"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp">
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            style="@style/notes_text"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_width="40dp"
+            android:layout_height="22dp"
+            android:layout_marginVertical="15dp"
+            android:background="@drawable/spinner_border"
+            android:paddingTop="2dp"
+            android:gravity="center_horizontal"
+            android:text="+10"
+            android:textSize="18dp" />
+
         <TextView
             android:id="@+id/card_skill_text"
-            android:layout_width="match_parent"
+            style="@style/notes_text"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="25dp"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:text="БОБА"/>
+            android:gravity="start"
+            android:lineHeight="25dp"
+            android:text="БОБА"
+            android:textSize="16dp" />
+
+
     </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>
+

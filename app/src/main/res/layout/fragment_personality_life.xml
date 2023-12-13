@@ -1,72 +1,432 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".list_fragments.PersonalityLifeFragment">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/_fragment_personality"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
         <LinearLayout
+            android:id="@+id/pic_name_class"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@id/_fragment_personality"
+            app:layout_constraintStart_toStartOf="parent">
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
-                android:layout_margin="17dp">
-            <com.google.android.material.imageview.ShapeableImageView
-                style="@style/character_card_image"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/jhony"
-                app:strokeColor="@color/black"/>
+                android:layout_margin="17dp"
+                app:cardCornerRadius="8dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    style="@style/character_card_image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/jhony"
+                    app:strokeColor="@color/black" />
             </com.google.android.material.card.MaterialCardView>
+
             <LinearLayout
                 android:layout_width="224dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/personal_list_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/personal_list_name"/>
+                        android:text="@string/personal_list_name" />
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/personal_name"
                         style="@style/personal_list_text"
-                        android:background="@android:color/transparent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/example_text_jhony"/>
+                        android:background="@android:color/transparent"
+                        android:text="@string/example_text_jhony" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:orientation="horizontal">
+
                     <com.google.android.material.textview.MaterialTextView
                         style="@style/personal_list_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/personal_list_class" />
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/personal_class"
                         style="@style/personal_list_text"
-                        android:background="@android:color/transparent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/example_class_solo"/>
+                        android:background="@android:color/transparent"
+                        android:text="@string/example_class_solo" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/personal_qualities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toBottomOf="@id/pic_name_class">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notes_1_head"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/border"
+                app:layout_constraintTop_toTopOf="@id/personal_qualities"
+                app:layout_constraintStart_toStartOf="@id/personal_qualities">
+
+
+                <EditText
+                    android:id="@+id/name_of_notes_1"
+                    android:textSize="32dp"
+                    android:layout_marginStart="16dp"
+                    style="@style/notes_text"
+                    android:layout_width="380dp"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:text="Персональные качества"
+
+
+                    app:layout_constraintStart_toStartOf="@id/notes_1_head"
+                    app:layout_constraintTop_toTopOf="@id/notes_1_head" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/text_of_notes_1"
+                style="@style/notes_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="\n\n\n"
+                android:gravity="top"
+                app:layout_constraintTop_toBottomOf="@id/notes_1_head"
+                app:layout_constraintBottom_toBottomOf="@id/personal_qualities"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- =================================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toBottomOf="@id/personal_qualities">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notes_2_head"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/border"
+                app:layout_constraintTop_toTopOf="@id/notes_2"
+                app:layout_constraintStart_toStartOf="@id/notes_2">
+
+
+                <EditText
+                    android:id="@+id/apperiance"
+                    style="@style/notes_text"
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:gravity="center"
+                    android:text="Внешность"
+                    android:textSize="32dp"
+                    android:layout_marginStart="120dp"
+                    app:layout_constraintStart_toStartOf="@id/notes_2_head"
+                    app:layout_constraintTop_toTopOf="@id/notes_2_head" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/text_of_notes_2"
+                style="@style/notes_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="\n\n\n"
+                android:gravity="top"
+                app:layout_constraintTop_toBottomOf="@id/notes_2_head"
+                app:layout_constraintBottom_toBottomOf="@id/notes_2"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- =================================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toBottomOf="@id/notes_2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notes_3_head"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/border"
+                app:layout_constraintTop_toTopOf="@id/notes_3"
+                app:layout_constraintStart_toStartOf="@id/notes_3">
+
+
+                <EditText
+                    android:id="@+id/name_of_notes_3"
+                    style="@style/notes_text"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:gravity="center"
+                    android:text="Образ и стиль"
+                    android:textSize="32dp"
+                    android:layout_marginStart="100dp"
+                    app:layout_constraintStart_toStartOf="@id/notes_3_head"
+                    app:layout_constraintTop_toTopOf="@id/notes_3_head" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/text_of_notes_3"
+                style="@style/notes_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="\n\n\n"
+                android:gravity="top"
+                app:layout_constraintTop_toBottomOf="@id/notes_3_head"
+                app:layout_constraintBottom_toBottomOf="@id/notes_3"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- =================================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toBottomOf="@id/notes_3">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notes_4_head"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/border"
+                app:layout_constraintTop_toTopOf="@id/notes_4"
+                app:layout_constraintStart_toStartOf="@id/notes_4">
+
+
+                <EditText
+                    android:id="@+id/name_of_notes_4"
+                    style="@style/notes_text"
+                    android:layout_width="360dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:gravity="center"
+                    android:text="Жильё и обаз жизни"
+                    android:textSize="32dp"
+                    android:layout_marginStart="30dp"
+                    app:layout_constraintStart_toStartOf="@id/notes_4_head"
+                    app:layout_constraintTop_toTopOf="@id/notes_4_head" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/text_of_notes_4"
+                style="@style/notes_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="\n\n\n"
+                android:gravity="top"
+                app:layout_constraintTop_toBottomOf="@id/notes_4_head"
+                app:layout_constraintBottom_toBottomOf="@id/notes_4"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- =================================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toBottomOf="@id/notes_4">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notes_5_head"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/border"
+                app:layout_constraintTop_toTopOf="@id/notes_5"
+                app:layout_constraintStart_toStartOf="@id/notes_5">
+
+
+                <EditText
+                    android:id="@+id/name_of_notes_5"
+                    style="@style/notes_text"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:gravity="center"
+                    android:text="Друзья и враги"
+                    android:textSize="32dp"
+                    android:layout_marginStart="90dp"
+                    app:layout_constraintStart_toStartOf="@id/notes_5_head"
+                    app:layout_constraintTop_toTopOf="@id/notes_5_head" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/text_of_notes_5"
+                style="@style/notes_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="\n\n\n"
+                android:gravity="top"
+                app:layout_constraintTop_toBottomOf="@id/notes_5_head"
+                app:layout_constraintBottom_toBottomOf="@id/notes_5"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- =================================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toBottomOf="@id/notes_5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notes_6_head"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/border"
+                app:layout_constraintTop_toTopOf="@id/notes_6"
+                app:layout_constraintStart_toStartOf="@id/notes_6">
+
+
+                <EditText
+                    android:id="@+id/name_of_notes_6"
+                    style="@style/notes_text"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:gravity="center"
+                    android:text="Друзья и враги"
+                    android:textSize="32dp"
+                    android:layout_marginStart="90dp"
+                    app:layout_constraintStart_toStartOf="@id/notes_6_head"
+                    app:layout_constraintTop_toTopOf="@id/notes_6_head" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/text_of_notes_6"
+                style="@style/notes_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="\n\n\n"
+                android:gravity="top"
+                app:layout_constraintTop_toBottomOf="@id/notes_6_head"
+                app:layout_constraintBottom_toBottomOf="@id/notes_6"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- =================================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notes_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            app:layout_constraintTop_toBottomOf="@id/notes_6">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/notes_7_head"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/border"
+                app:layout_constraintTop_toTopOf="@id/notes_7"
+                app:layout_constraintStart_toStartOf="@id/notes_7">
+
+
+                <EditText
+                    android:id="@+id/name_of_notes_7"
+                    style="@style/notes_text"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:gravity="center"
+                    android:text="Друзья и враги"
+                    android:textSize="32dp"
+                    android:layout_marginStart="90dp"
+                    app:layout_constraintStart_toStartOf="@id/notes_7_head"
+                    app:layout_constraintTop_toTopOf="@id/notes_7_head" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/text_of_notes_7"
+                style="@style/notes_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="\n\n\n"
+                android:gravity="top"
+                app:layout_constraintTop_toBottomOf="@id/notes_7_head"
+                app:layout_constraintBottom_toBottomOf="@id/notes_7"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
